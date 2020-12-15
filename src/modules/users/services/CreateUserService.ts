@@ -1,8 +1,6 @@
-import { hash } from 'bcryptjs';
-import { injectable, inject } from 'tsyringe';
-
 import AppError from '@shared/errors/AppError';
-
+import { hash } from 'bcryptjs';
+import { inject, injectable } from 'tsyringe';
 import User from '../infra/typeorm/entities/User';
 import IUsersRepository from '../repositories/IUsersRepository';
 
@@ -11,6 +9,7 @@ interface Request {
   email: string;
   password: string;
 }
+
 @injectable()
 class CreateUserService {
   constructor(
